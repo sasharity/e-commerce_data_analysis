@@ -11,7 +11,8 @@ def load_data():
 def analyze_average_spending(data):
     """Calculate the average total spending for each customer segment."""
     spending = (
-        data.groupby("customer_segment")["total_spent_usd"]
+        data.groupby("customer_segment")
+        ["total_spent_usd"]
         .mean()
         .sort_values(ascending=False)
     )
